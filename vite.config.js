@@ -1,9 +1,12 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import tailwindcss from '@tailwindcss/vite';
 >>>>>>> de47557 (hello)
+=======
+>>>>>>> 8f2a8fc (setup)
 
 export default defineConfig({
     plugins: [
@@ -12,8 +15,11 @@ export default defineConfig({
             refresh: true,
         }),
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         tailwindcss(),
 >>>>>>> de47557 (hello)
+=======
+>>>>>>> 8f2a8fc (setup)
     ],
 });

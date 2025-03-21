@@ -1,17 +1,26 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 =======
 use Illuminate\Support\Facades\Route;
 >>>>>>> de47557 (hello)
+=======
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
+>>>>>>> 8f2a8fc (setup)
 
 Route::get('/', function () {
     return view('welcome');
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8f2a8fc (setup)
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,5 +33,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+<<<<<<< HEAD
 =======
 >>>>>>> de47557 (hello)
+=======
+>>>>>>> 8f2a8fc (setup)
