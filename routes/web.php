@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\AdvertiseController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CompanyController;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Route::get("/", [PageController::class, 'home'])->name('home');
-// Route::get("/about", [PageController::class, 'about'])->name('about');
-// Route::get("/category/{slug}", [PageController::class, 'category'])->name('category');
-// Route::get("/article/{id}", [PageController::class, 'article'])->name('article');
+Route::get("/", [PageController::class, 'home'])->name('home');
+Route::get("/about", [PageController::class, 'about'])->name('about');
+Route::get("/category/{slug}", [PageController::class, 'category'])->name('category');
+Route::get("/article/{id}", [PageController::class, 'article'])->name('article');
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
