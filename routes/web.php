@@ -1,28 +1,24 @@
+
 <?php
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+use App\Http\Controllers\Admin\AdvertiseController;
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
-=======
-use Illuminate\Support\Facades\Route;
->>>>>>> de47557 (hello)
-=======
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
->>>>>>> 8f2a8fc (setup)
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get("/", [PageController::class, 'home'])->name('home');
+// Route::get("/about", [PageController::class, 'about'])->name('about');
+// Route::get("/category/{slug}", [PageController::class, 'category'])->name('category');
+// Route::get("/article/{id}", [PageController::class, 'article'])->name('article');
 
 Route::get('/', function () {
-    return view('welcome');
-});
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8f2a8fc (setup)
-
-Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -30,11 +26,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource("/admin/company", CompanyController::class)->names('admin.company');
+    Route::resource("/admin/category", CategoryController::class)->names('admin.category');
+    Route::resource("/admin/article", ArticleController::class)->names('admin.article');
+    Route::resource("/admin/advertise", AdvertiseController::class)->names('admin.advertise');
 });
 
-require __DIR__.'/auth.php';
-<<<<<<< HEAD
-=======
->>>>>>> de47557 (hello)
-=======
->>>>>>> 8f2a8fc (setup)
+require __DIR__ . '/auth.php';
