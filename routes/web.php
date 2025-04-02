@@ -1,6 +1,7 @@
 
 <?php
 
+
 use App\Http\Controllers\Admin\AdvertiseController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -18,6 +19,7 @@ Route::get("/about", [PageController::class, 'about'])->name('about');
 Route::get("/category/{slug}", [PageController::class, 'category'])->name('category');
 Route::get("/article/{id}", [PageController::class, 'article'])->name('article');
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -33,4 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::resource("/admin/advertise", AdvertiseController::class)->names('admin.advertise');
 });
 
+
 require __DIR__ . '/auth.php';
+
