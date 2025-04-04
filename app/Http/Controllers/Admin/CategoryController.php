@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
@@ -40,7 +41,7 @@ class CategoryController extends Controller
         $category->slug = Str::slug($request->eng_title);
         $category->meta_keywords = $request->meta_keywords;
         $category->meta_description = $request->meta_description;
-        $category->save();
+        Alert::success('Success', 'Category Saved Successfully');
         toast('Category Saved Successfully', 'success');
         return redirect()->back();
     }
@@ -78,7 +79,7 @@ class CategoryController extends Controller
         $category->slug = Str::slug($request->eng_title);
         $category->meta_keywords = $request->meta_keywords;
         $category->meta_description = $request->meta_description;
-        $category->save();
+        Alert::success('Success', 'Category Updated Successfully');
         toast('Category Updated Successfully', 'success');
         return redirect()->back();
     }
